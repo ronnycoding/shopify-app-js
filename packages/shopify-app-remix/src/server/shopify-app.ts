@@ -108,9 +108,9 @@ export function shopifyApp<
     isSingleMerchantApp(shopify, appConfig)
   ) {
     shopify.login = loginFactory(params);
-  } else {
-    shopify.logger = logger;
   }
+
+  shopify.logger = logger;
 
   return shopify as ShopifyApp<Config>;
 }

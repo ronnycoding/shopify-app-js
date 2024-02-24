@@ -27,12 +27,3 @@ jobs:
 
       - name: Build
         run: yarn build
-
-      - name: Version
-        run: yarn changeset version --snapshot experimental
-
-      - name: Publish to NPM
-        run: yarn changeset publish --tag experimental
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}

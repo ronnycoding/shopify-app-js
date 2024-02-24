@@ -90,6 +90,7 @@ export function shopifyApp<
     strategy,
   });
 
+  // @ts-expect-error TODO: fix this
   const shopify:
     | AdminApp<Config>
     | AppStoreApp<Config>
@@ -116,6 +117,8 @@ export function shopifyApp<
     isSingleMerchantApp(shopify, appConfig)
   ) {
     shopify.login = loginFactory(params);
+  } else {
+    shopify.logger = logger;
   }
 
   logDisabledFutureFlags(config, logger);

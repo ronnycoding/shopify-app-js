@@ -513,7 +513,16 @@ export interface ShopifyAppLogin {
   login: Login;
 }
 
-export type AdminApp<Config extends AppConfigArg> = ShopifyAppBase<Config>;
+export type ShopifyAppLogger = {
+  /**
+   * Shopify App Logger
+   */
+
+  logger: Shopify['logger'];
+};
+
+export type AdminApp<Config extends AppConfigArg> = ShopifyAppBase<Config> &
+  ShopifyAppLogger;
 export type SingleMerchantApp<Config extends AppConfigArg> =
   ShopifyAppBase<Config> & ShopifyAppLogin;
 export type AppStoreApp<Config extends AppConfigArg> = ShopifyAppBase<Config> &

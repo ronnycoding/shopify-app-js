@@ -1,5 +1,11 @@
 # Changelog
 
+## 4.1.3
+
+### Patch Changes
+
+- ee3c852: increase max body size to 500kb
+
 ## 4.1.2
 
 ### Patch Changes
@@ -107,9 +113,9 @@ If you need to explicitly set those generics, you'll need to use the `AppConfigP
 Before:
 
 ```ts
-import {ShopifyApp} from '@shopify/shopify-app-express';
-import {restResources} from '@shopify/shopify-api/rest/admin/2023-10';
-import {MemorySessionStorage} from '@shopify/shopify-app-session-storage-memory';
+import { ShopifyApp } from "@shopify/shopify-app-express";
+import { restResources } from "@shopify/shopify-api/rest/admin/2023-10";
+import { MemorySessionStorage } from "@shopify/shopify-app-session-storage-memory";
 
 const myVariable: ShopifyApp<typeof restResources, MemorySessionStorage>;
 ```
@@ -117,9 +123,9 @@ const myVariable: ShopifyApp<typeof restResources, MemorySessionStorage>;
 After:
 
 ```ts
-import {ShopifyApp, AppConfigParams} from '@shopify/shopify-app-express';
-import {restResources} from '@shopify/shopify-api/rest/admin/2023-10';
-import {MemorySessionStorage} from '@shopify/shopify-app-session-storage-memory';
+import { ShopifyApp, AppConfigParams } from "@shopify/shopify-app-express";
+import { restResources } from "@shopify/shopify-api/rest/admin/2023-10";
+import { MemorySessionStorage } from "@shopify/shopify-app-session-storage-memory";
 
 const myVariable: ShopifyApp<
   AppConfigParams<typeof restResources, MemorySessionStorage>

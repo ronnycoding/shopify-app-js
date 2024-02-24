@@ -524,9 +524,10 @@ export type ShopifyAppLogger = {
 export type AdminApp<Config extends AppConfigArg> = ShopifyAppBase<Config> &
   ShopifyAppLogger;
 export type SingleMerchantApp<Config extends AppConfigArg> =
-  ShopifyAppBase<Config> & ShopifyAppLogin;
+  ShopifyAppBase<Config> & ShopifyAppLogin & ShopifyAppLogger;
 export type AppStoreApp<Config extends AppConfigArg> = ShopifyAppBase<Config> &
-  ShopifyAppLogin;
+  ShopifyAppLogin &
+  ShopifyAppLogger;
 
 type EnforceSessionStorage<Config extends AppConfigArg, Base> = Base & {
   sessionStorage: SessionStorageType<Config>;

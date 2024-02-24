@@ -117,11 +117,12 @@ export function shopifyApp<
     isSingleMerchantApp(shopify, appConfig)
   ) {
     shopify.login = loginFactory(params);
-  } else {
-    shopify.logger = logger;
   }
 
   logDisabledFutureFlags(config, logger);
+  
+  // expose logger for logging app logs
+  shopify.logger = logger;
 
   return shopify as ShopifyApp<Config>;
 }

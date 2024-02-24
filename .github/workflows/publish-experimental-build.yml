@@ -7,11 +7,6 @@ jobs:
     name: Publishing experimental release
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Repo
-        uses: actions/checkout@master
-        with:
-          ref: experimental
-
       # Setup .npmrc file to publish to npm
       - name: Setup Node.js
         uses: actions/setup-node@v3

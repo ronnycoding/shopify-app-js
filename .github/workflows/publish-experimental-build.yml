@@ -10,7 +10,7 @@ jobs:
       - name: Checkout Repo
         uses: actions/checkout@master
         with:
-          ref: experimental
+          ref: main
 
       # Setup .npmrc file to publish to npm
       - name: Setup Node.js
@@ -27,12 +27,7 @@ jobs:
 
       - name: Build
         run: yarn build
-
-      - name: Version
-        run: yarn changeset version --snapshot experimental
-
-      - name: Publish to NPM
-        run: yarn changeset publish --tag experimental
+      - run: npm ci
+      - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
